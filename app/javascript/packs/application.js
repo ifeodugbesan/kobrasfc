@@ -16,6 +16,7 @@ import "controllers"
 import "bootstrap"
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
+import html2canvas from 'html2canvas';
 
 
 const btn = document.getElementById('downloadButton')
@@ -24,15 +25,19 @@ var node = document.getElementById('completedPost');
 
 btn.addEventListener('click', (event) => {
 
-  domtoimage.toPng(node)
-    .then(function (dataUrl) {
-        var img = new Image();
-        img.src = dataUrl;
-        document.body.appendChild(img);
-    })
-    .catch(function (error) {
-        console.error('oops, something went wrong!', error);
-    });
+  html2canvas(node).then(canvas => {
+      document.body.appendChild(canvas)
+  });
+
+  // domtoimage.toPng(node)
+  //   .then(function (dataUrl) {
+  //       var img = new Image();
+  //       img.src = dataUrl;
+  //       document.body.appendChild(img);
+  //   })
+  //   .catch(function (error) {
+  //       console.error('oops, something went wrong!', error);
+  //   });
 
   // const scale = 1;
   // domtoimage.toPng((node), { quality: 1, width: node.clientWidth * scale,  height: node.clientHeight * scale,  style: {   transform: 'scale('+scale+')',   transformOrigin: 'top left' } })
