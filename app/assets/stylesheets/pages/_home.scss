@@ -15,6 +15,8 @@
   @include media-breakpoint-down(xl) {
     flex-grow: 0;
     border-right: none;
+    margin-right: 0;
+    padding: 48px 0;
   }
 }
 .rendered-post {
