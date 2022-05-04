@@ -18,9 +18,8 @@ import html2canvas from 'html2canvas';
 
 
 const btn = document.getElementById('downloadButton')
-
-var node = document.getElementById('completedPost');
-var modal = document.querySelector('.modal-body');
+const node = document.getElementById('completedPost');
+const modal = document.querySelector('.modal-body');
 
 btn.addEventListener('click', (event) => {
   html2canvas(node).then(canvas => {
@@ -29,4 +28,15 @@ btn.addEventListener('click', (event) => {
     canvas.style.width = '100%'
     modal.appendChild(canvas)
   });
+})
+
+const modalBtn = document.getElementById('modalBtn')
+
+modalBtn.addEventListener('click', (event) => {
+  const canvas = document.querySelector("canvas");
+  const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  const link = document.createElement('a');
+  link.download = "matchday-post.png";
+  link.href = image;
+  link.click();
 })

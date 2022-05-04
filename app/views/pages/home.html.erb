@@ -15,7 +15,7 @@
       <%= file_field_tag :away_team, class: "form-control", placeholder: "Away team", data: { action: 'change->score#updatePostImage', query: 'away'} %>
     <% end %>
     <div class="d-flex justify-content-center align-items-center pt-3">
-      <button id="downloadButton" class="btn btn-primary m-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Download Post</button>
+      <button id="downloadButton" class="btn btn-primary m-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Preview Post</button>
     </div>
   </div>
   <div class="d-flex justify-content-center align-items-center">
@@ -47,6 +47,9 @@
     <div class="modal-content">
       <div class="modal-body">
 
+      </div>
+      <div class="modal-footer">
+        <button id="modalBtn" class="btn btn-primary m-0">Download Post</button>
       </div>
     </div>
   </div>

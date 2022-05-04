@@ -106,5 +106,38 @@
 
 .modal-dialog {
   // min-height: unset;
-  max-width: 60vw;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  max-width: 800px;
 }
+
+.modal-backdrop.show {
+  opacity: 0.95;
+}
+
+#completedPost {
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+    left: 100vw;
+  }
+}
+
+
+.modal-footer {
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
