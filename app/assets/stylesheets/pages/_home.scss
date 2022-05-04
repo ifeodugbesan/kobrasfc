@@ -1,1 +1,97 @@
 // Specific CSS for your home-page
+.rendered-post {
+  width: 800px;
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  padding: 47px 88px;
+}
+
+.post-image {
+  border: 14px solid #FFFFFF;
+  height: 100%;
+  background: #590CA3;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-preview {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.power-league {
+  position: absolute;
+  width: 56px;
+  top: 120px;
+  left: -35px;
+}
+
+.full-time {
+  display: inline-block;
+  background: #FC565D;
+  min-width: 384px;
+  width: 384px;
+  height: 83px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 52px;
+  h2 {
+    color: #FFFFFF;
+    font-size: 44px;
+    margin: 0;
+  }
+}
+
+.post-content {
+  position: absolute;
+  bottom: -46px;
+}
+
+.score {
+  min-width: 503px;
+  height: 100px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  h2 {
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+.stadium {
+  width: 288px;
+  height: 20px;
+  background: #5556C6;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: #FFFFFF;
+    font-size: 10px;
+    margin: 0;
+    font-weight: 900;
+  }
+}
+
+.score-form {
+  max-width: 500px;
+  margin: 0 auto;
+  input {
+    margin-bottom: 8px;
+  }
+}

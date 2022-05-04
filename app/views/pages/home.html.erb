@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container py-5" data-controller="score">
+  <div class="py-5">
+    <%= form_tag root_path, method: :get, class: "score-form" do %>
+      <%= text_field_tag :home_team, params[:home_team], class: "form-control", placeholder: "Home team", data: { action: 'keyup->score#updatePost', query: 'home'} %>
+      <div class="d-flex">
+        <div class="flex-grow-1">
+          <%= text_field_tag :home_team_score, params[:home_team_score], class: "form-control", placeholder: "Home score", data: { action: 'keyup->score#updatePost', query: 'homeScore'} %>
+        </div>
+        <div class="mx-3 mb-2 d-flex align-items-center">-</div>
+        <div class="flex-grow-1">
+          <%= text_field_tag :away_team_score, params[:away_team_score], class: "form-control", placeholder: "Away score", data: { action: 'keyup->score#updatePost', query: 'awayScore'} %>
+        </div>
+      </div>
+      <%= text_field_tag :away_team, params[:away_team], class: "form-control", placeholder: "Away team", data: { action: 'keyup->score#updatePost', query: 'away'} %>
+      <%= file_field_tag :away_team, class: "form-control", placeholder: "Away team", data: { action: 'change->score#updatePostImage', query: 'away'} %>
+    <% end %>
+  </div>
+  <div class="rendered-post" style="background-image: url(<%= image_path 'background.jpg' %>)">
+    <div class="post-image">
+      <%= image_tag 'power-league.png', class: 'power-league' %>
+      <div id="photo-preview">
+      </div>
+      <div class="post-content">
+        <div class="full-time">
+          <h2>FULL - TIME</h2>
+        </div>
+        <div class="score">
+          <h2><span class="home" id="home">HOME TEAM</span> <span class="home-score" id="homeScore">0</span> - <span class="away-score" id="awayScore">0</span> <span class="away" id="away">AWAY TEAM</span></h2>
+        </div>
+        <div class="stadium">
+          <h2>POWERLEAGUE STADIUM</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
