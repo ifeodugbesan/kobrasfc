@@ -12,16 +12,12 @@ export default class extends Controller {
   }
 
   updatePostImage(event) {
-    console.log('We here!')
     const input = event.currentTarget
-    console.log(input)
-    console.log(input.files)
     // we select the photo input
     // we call the displayPreview function (who retrieve the image url and display it)
     if (input.files && input.files[0]) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        console.log('inside uploader')
         document.getElementById('photo-preview').style.backgroundImage = `url(${event.currentTarget.result})`
       }
       reader.readAsDataURL(input.files[0])
@@ -29,4 +25,3 @@ export default class extends Controller {
     }
   }
 }
-
