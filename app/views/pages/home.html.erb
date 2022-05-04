@@ -14,21 +14,28 @@
       <%= text_field_tag :away_team, params[:away_team], class: "form-control", placeholder: "Away team", data: { action: 'keyup->score#updatePost', query: 'away'} %>
       <%= file_field_tag :away_team, class: "form-control", placeholder: "Away team", data: { action: 'change->score#updatePostImage', query: 'away'} %>
     <% end %>
+    <div class="d-flex justify-content-center align-items-center pt-3">
+      <button id="downloadButton" class="btn btn-primary m-0">Download Post</button>
+    </div>
   </div>
-  <div class="rendered-post" style="background-image: url(<%= image_path 'background.jpg' %>)">
-    <div class="post-image">
-      <%= image_tag 'power-league.png', class: 'power-league' %>
-      <div id="photo-preview">
-      </div>
-      <div class="post-content">
-        <div class="full-time">
-          <h2>FULL - TIME</h2>
-        </div>
-        <div class="score">
-          <h2><span class="home" id="home">HOME TEAM</span> <span class="home-score" id="homeScore">0</span> - <span class="away-score" id="awayScore">0</span> <span class="away" id="away">AWAY TEAM</span></h2>
-        </div>
-        <div class="stadium">
-          <h2>POWERLEAGUE STADIUM</h2>
+  <div class="d-flex justify-content-center align-items-center">
+    <div id="completedPost">
+      <div class="rendered-post" style="background-image: url(<%= image_path 'background.jpg' %>)">
+        <div class="post-image">
+          <%= image_tag 'power-league.png', class: 'power-league' %>
+          <div id="photo-preview">
+          </div>
+          <div class="post-content">
+            <div class="full-time">
+              <h2 class="poppins">FULL - TIME</h2>
+            </div>
+            <div class="score">
+              <h2 class="poppins"><span class="home" id="home">HOME TEAM</span> <span class="home-score" id="homeScore">0</span> - <span class="away-score" id="awayScore">0</span> <span class="away" id="away">AWAY TEAM</span></h2>
+            </div>
+            <div class="stadium">
+              <h2 class="poppins">POWERLEAGUE STADIUM</h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>
