@@ -94,3 +94,17 @@
     margin-bottom: 8px;
   }
 }
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+}
+
+.modal-dialog {
+  // min-height: unset;
+  max-width: 60vw;
+}

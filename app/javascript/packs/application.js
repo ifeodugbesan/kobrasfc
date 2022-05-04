@@ -20,14 +20,13 @@ import html2canvas from 'html2canvas';
 const btn = document.getElementById('downloadButton')
 
 var node = document.getElementById('completedPost');
+var modal = document.querySelector('.modal-body');
 
 btn.addEventListener('click', (event) => {
   html2canvas(node).then(canvas => {
-    // document.body.appendChild(canvas)
-    const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    var link = document.createElement('a');
-    link.download = "my-image.png";
-    link.href = image;
-    link.click();
+    modal.innerHTML = ''
+    canvas.style.height = 'unset'
+    canvas.style.width = '100%'
+    modal.appendChild(canvas)
   });
 })
