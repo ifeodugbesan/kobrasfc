@@ -1,5 +1,5 @@
-<div class="container py-5" data-controller="score">
-  <div class="py-5">
+<div class="wrapper" data-controller="score">
+  <div class="info">
     <%= form_tag root_path, method: :get, class: "score-form" do %>
       <%= text_field_tag :home_team, params[:home_team], class: "form-control", placeholder: "Home team", data: { action: 'keyup->score#updatePost', query: 'home'} %>
       <div class="d-flex">
